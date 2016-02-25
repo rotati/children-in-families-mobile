@@ -2,7 +2,7 @@
 
 The Children in Families case worker mobile application can be used by in the field case workers to monitor Children in Kinship and Foster Care Cases. The Case Worker can visit the child on site and take notes on their wellbieng assessments against a set of well defined and researched domains.
 
-NOTE: This Mobile Application needs to be used in conjuction with the [Children in Families Web Application](https://github.com/rotati/children_in_families)
+NOTE: This Mobile Application needs to be used in conjuction with the [Children in Families Web Application](https://github.com/rotati/children-in-families-web)
 
 ### Installation Requirements
 
@@ -49,4 +49,4 @@ Children in Families is developed in partnership by [Rotati Consulting](http://w
 
 ### License
 
-Children in Families is released under [AGPL](http://www.gnu.org/licenses/agpl-3.0-standalone.html)
+Children in Families Mobile Application is released under [AGPL](http://www.gnu.org/licenses/agpl-3.0-standalone.html)
