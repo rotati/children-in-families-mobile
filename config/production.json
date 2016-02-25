@@ -1,0 +1,6 @@
+{
+  "localDB": "cifDevelopment",
+  "remoteDB": "cifProduction",
+  "changeLogDB": "cifChangeLog",
+  "host": "http://cif-web.rotati.com"
+}

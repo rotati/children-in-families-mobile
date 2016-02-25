@@ -1,0 +1,66 @@
+<ion-view view-title="{{ 'ASSESSMENT.SHOW_TITLE' | translate }}">
+  <ion-nav-buttons side="left">
+    <button class="button back-button button-clear ink" ng-click="vm.goBack()">
+      <i class="icon ion-ios-arrow-back"></i>
+    </button>
+  </ion-nav-buttons>
+
+  <ion-content padding id="assessment-show">
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <div class="item item-divider">
+            {{ 'ASSESSMENT.MONTHLY_ASSESSMENG_REPORT' | translate }}
+          </div>
+          <div class="item item-text-wrap">
+            <div class="row">
+              <div class="col">{{ vm.client.name }}</div>
+              <div class="col">{{ 'ASSESSMENT.COMPLETED_BY' | translate }} Chantra</div>
+              <div class="col">{{ 'GENERAL.ON' | translate }} {{ vm.assessment.date | date: 'dd/MM/yyyy' }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="padding" ng-repeat="assessmentDomain in vm.assessmentDomains">
+      <div class="card" assessment-score-border score="assessmentDomain.score">
+        <div class="row">
+          <div class="col col-25">
+            <div class="item-text-wrap border" ng-if="assessmentDomain.Domain_assessments == domain.id" ng-repeat="domain in vm.domains">
+              <p>{{ 'GENERAL.DOMAIN' | translate }} {{ domain.identity }}</p>
+              {{ domain.name }}
+            </div>
+            <div class="row">
+              <div class="col">
+                <h5 class="item-text-wrap">{{ 'DOMAIN.SCORE' | translate }}</h5>
+              </div>
+            </div>
+            <div class="box-group padding">
+              <div assessment-score="{{assessmentDomain.previousScore}}" ng-if="assessmentDomain.previousScore">{{assessmentDomain.previousScore}}</div>
+              <i class="icon ion-arrow-right-c" ng-if="assessmentDomain.previousScore"></i>
+              <div assessment-score="{{assessmentDomain.score}}">{{assessmentDomain.score}}</div>
+            </div>
+          </div>
+          <div class="col col-75">
+            <div class="item-text-wrap border">
+              {{ assessmentDomain.reason }}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="padding">
+      <div class="card">
+        <ion-item>
+          <h2>{{ 'TASK.LIST' | translate }}</h2>
+        </ion-item>
+        <div class="list">
+          <ion-item ng-repeat="task in vm.tasks">
+            {{ 'DOMAIN.NAME' | translate }} {{ task.domain.identity }} : {{ task.name }}
+          </ion-item>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

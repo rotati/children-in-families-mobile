@@ -1,0 +1,43 @@
+<ion-view view-title="{{ 'TASK.NEW_TITLE' | translate }}">
+  <ion-nav-buttons side="left">
+    <button class="button back-button button-clear ink" ng-click="vm.goBack()">
+      <i class="icon ion-ios-arrow-back"></i>
+    </button>
+  </ion-nav-buttons>
+
+  <ion-nav-buttons side="right">
+    <button class="button button-icon button-clear ion-home" ng-click="vm.goHome()" ></button>
+  </ion-nav-buttons>
+
+  <ion-content padding>
+    <form ng-submit="vm.save();">
+      <ion-list>
+        <label class="item item-input">
+          <span class="input-label">{{ 'TASK.NEW_TASK_REGUARDING' | translate }}</span>
+          <input type="text" ng-model="vm.task.client" disabled>
+        </label>
+
+        <label class="item item-input">
+          <span class="input-label">{{ 'TASK.REGUARDING_DOMAIN' | translate }}</span>
+          <select ng-model="vm.task.domain" ng-options="domain.id as domain.identity for domain in vm.domains">
+          </select>
+        </label>
+
+        <label class="item item-input">
+          <span class="input-label">{{ 'TASK.TASK_DETAILS' | translate }}:</span>
+          <textarea ng-model="vm.task.name" cols="30" rows="5" required></textarea>
+        </label>
+
+        <label class="item item-input">
+          <span class="input-label">{{ 'TASK.COMPLETION_DATE' | translate }}:</span>
+          <input type="date" ng-model="vm.task.completionDate" required>
+        </label>
+        <ion-item>
+          <button class="button button-positive button-small" type="submit">
+            {{ 'GENERAL.DONE' | translate }}
+          </button>
+        </ion-item>
+      </ion-list>
+    </form>
+  </ion-content>
+</ion-view>

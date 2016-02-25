@@ -1,0 +1,176 @@
+/*
+To customize the look and feel of Ionic, you can override the variables
+in ionic's _variables.scss file.
+
+For example, you might change some of the default colors:
+
+*/
+
+$light:        #fff !default;
+$stable:       #f8f8f8 !default;
+$positive:     #387ef5 !default;
+$calm:         #11c1f3 !default;
+$balanced:     #33cd5f !default;
+$energized:    #ffc900 !default;
+$assertive:    #ef473a !default;
+$royal:        #886aea !default;
+$dark:         #444 !default;
+$popup-width:  400px;
+$modal-height: 350px;
+
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+
+// Include all of Ionic
+// @import "www/lib/ionic/scss/ionic";
+
+ion-content {
+  background-color: #f1f5f7;
+}
+.login-form {
+  padding-left: 5px !important;
+  padding-bottom: 4px;
+}
+
+.login-icon {
+  font-size: 20px;
+}
+
+.search-input {
+  width: 100%;
+}
+
+.app-icon {
+  background-color: #fff;
+  background: url('../img/logo.png') center;
+  background-size: cover;
+  border-radius: 50%;
+  height: 125px;
+  margin: 0 auto;
+  width: 125px;
+}
+
+.box-group {
+  display: flex;
+
+  .icon {
+    padding: 5px 10px 0 0;
+  }
+}
+
+.box {
+  border: 2px solid $dark;
+  width: 30px;
+  height: 30px;
+  padding: 2px 0 0 0;
+  box-sizing: border-box;
+  text-align: center;
+  margin-right: 10px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.box-energized {
+  background: $energized;
+}
+
+.box-positive {
+  background: $positive;
+}
+
+.box-balanced {
+  background: $balanced;
+}
+
+.box-assertive {
+  background: $assertive;
+}
+
+.box-border-energized {
+  border: 2px solid $energized;
+  margin: 10px;
+}
+
+.box-border-positive {
+  border: 2px solid $positive;
+  margin: 10px;
+}
+
+.box-border-balanced {
+  border: 2px solid $balanced;
+  margin: 10px;
+}
+
+.box-border-assertive {
+  border: 2px solid $assertive;
+  margin: 10px;
+}
+
+.box-background-energized {
+  border: 2px solid rgb(143, 120, 38);
+  background: rgba(255, 201, 0, 0.71);
+  margin-bottom: 10px;
+}
+
+.box-background-assertive {
+  border: 2px solid $balanced;
+  background: $assertive;
+  margin-bottom: 10px;
+}
+
+.border {
+  border: 2px solid #ccc;
+  padding: 10px;
+  margin: 10px;
+}
+
+.border-upcomming .list {
+  border: 2px solid $balanced;
+  margin-top: 5px;
+}
+
+.border-ondue .list {
+  border: 2px solid $calm;
+  margin-top: 5px;
+}
+
+.border-overdue .list {
+  border: 2px solid $assertive;
+  margin-top: 5px;
+}
+
+form .ng-invalid-required {
+  border-bottom: 1px solid #B83E2C;
+}
+
+.popup-container .popup {
+  width: $popup-width;
+  text-align: center;
+}
+.confirm-panel {
+  height: $modal-height !important;
+}
+.confirm-panel {
+  .button {
+    padding: 0;
+  }
+}
+.logout {
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+}
+
+.client-name-km h2 {
+  overflow: visible !important;
+}
+
+.client-detail {
+  .custom-card {
+    background-color: $light;
+  }
+}
+
+.no-padding {
+  padding: 0;
+}

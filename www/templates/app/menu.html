@@ -1,0 +1,40 @@
+<ion-side-menus enable-menu-with-back-views="true">
+  <ion-side-menu side="left">
+    <ion-content class="stable-bg">
+      <ion-list>
+        <ion-item nav-clear menu-close ui-sref="root.clients">
+          {{ 'MENU.HOME' | translate }}
+        </ion-item>
+
+        <ion-item nav-clear menu-close ng-click="vm.switchLanguage('en')">
+          {{ 'LANGUAGE.ENGLISH' | translate }}
+        </ion-item>
+
+        <ion-item nav-clear menu-close ng-click="vm.switchLanguage('km')">
+          {{ 'LANGUAGE.KHMER' | translate }}
+        </ion-item>
+      </ion-list>
+    </ion-content>
+    <ion-footer-bar class="bar-assertive">
+      <ion-item nav-clear class="logout" menu-close ng-click="vm.logout()" ng-if="vm.isLogin">
+        <i class="ion ion-log-out"></i>
+        {{ 'ACCOUNT.LOGOUT' | translate }}
+      </ion-item>
+    </ion-footer-bar>
+  </ion-side-menu>
+
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-positive" class="has-header-fab-left" align-title="left">
+      <ion-nav-buttons side="left">
+        <button menu-toggle="left" class="button button-icon icon ion-navicon button-clear"></button>
+      </ion-nav-buttons>
+
+      <ion-nav-buttons side="right">
+        <button class="button button-icon button-clear ion-home" ng-click="vm.goHome()" ></button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+
+    <ion-nav-view name="menuContent" nav-view-direction="forward" nav-view-transition="ios"></ion-nav-view>
+    <ion-nav-view name="login" nav-view-direction="forward" nav-view-transition="ios"></ion-nav-view>
+  </ion-side-menu-content>
+</ion-side-menus>

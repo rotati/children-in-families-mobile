@@ -1,0 +1,54 @@
+<ion-view view-title="{{ 'ASSESSMENT.INDEX_TITLE' | translate }}">
+  <ion-nav-buttons side="left">
+    <button class="button back-button button-clear ink" ng-click="vm.goBack()">
+      <i class="icon ion-ios-arrow-back"></i>
+    </button>
+  </ion-nav-buttons>
+
+  <ion-content padding>
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <div class="item item-divider">
+            Charles Smith {{ 'ASSESSMENT.HISTORY' | translate }}
+          </div>
+
+          <div class="item item-text-wrap">
+            <div class="row" ng-repeat="assessment in vm.assessments">
+              <div class="col">
+                <span ng-show="$index == 0">
+                  {{ 'ASSESSMENT.INITIAL_ASSESSMENG' | translate }}
+                </span>
+                <span ng-hide="$index == 0">
+                  {{ 'ASSESSMENT.MONTHLY_REVIEW' | translate }}
+                </span>
+              </div>
+              <div class="col">
+                {{ assessment.date | date:'dd/MM/yyyy' }}
+              </div>
+              <div class="col">
+                <button class="button button-small button-positive ink icon-right ion-chevron-right" ui-sref="root.clients.assessments.show({ clientId: vm.clientId, id: assessment.id })">
+                  {{ 'ASSESSMENT.VIEW_REPORT' | translate }}
+                </button>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                {{ 'ASSESSMENT.NEXT_MONTHLY_REVIEW' | translate }}
+              </div>
+              <div class="col">
+                {{ vm.nextAssessment.date | date: 'dd/MM/yyyy' }}
+              </div>
+              <div class="col">
+                <button class="button button-small button-positive ink icon-right ion-chevron-right" ui-sref="root.clients.confirm({ id: vm.clientId })" ng-disabled="!vm.nextAssessment.canCreate">
+                  {{ 'ASSESSMENT.BEGIN_NOW' | translate }}
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

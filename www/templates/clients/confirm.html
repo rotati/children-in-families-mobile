@@ -1,0 +1,78 @@
+<ion-view view-title="{{ 'CLIENT.CONFIRMATION_TITLE' | translate }}">
+  <ion-nav-buttons side="left">
+    <button class="button back-button button-clear ink" ng-click="vm.goBack()">
+      <i class="icon ion-ios-arrow-back"></i>
+    </button>
+  </ion-nav-buttons>
+
+  <ion-content padding>
+    <div class="padding">
+      <p>{{ 'CLIENT.ASSESSMENT_DESCRIPTION' | translate }}</p>
+
+      <p>{{ 'CLIENT.ASSESSMENT_DESCRIPTION_1' | translate }}</p>
+
+      <p>{{ 'CLIENT.ASSESSMENT_BEGIN_INSTRUCTION' | translate }}</p>
+
+    </div>
+    <div class="padding">
+      <div class="card">
+        <div class="row">
+          <div class="col">
+            <label class="item item-input item-floating-label">
+              <span class="input-label">{{ 'GENERAL.NAME' | translate }}</span>
+              <input type="text" placeholder="{{ 'GENERAL.NAME' | translate }}" ng-model="vm.client.name">
+            </label>
+          </div>
+          <div class="col">
+            <label class="item item-input item-floating-label">
+              <span class="input-label">{{ 'CLIENT.REFERRAL_DATE' | translate }}</span>
+              <input type="text" placeholder="{{ 'CLIENT.REFERRAL_DATE' | translate }}" ng-model="vm.client.referralName">
+            </label>
+          </div>
+          <div class="col">
+            <label class="item item-input item-floating-label">
+              <span class="input-label">{{ 'CLIENT.TODAY_DATE' | translate }}</span>
+              <input type="date" placeholder="{{ 'CLIENT.TODAY_DATE' | translate }}" ng-model="vm.currentDate">
+            </label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <label class="item item-input item-floating-label">
+              <span class="input-label">{{ 'CLIENT.DATE_OF_BIRTH' | translate }}</span>
+              <input type="text" placeholder="{{ 'CLIENT.DATE_OF_BIRTH' | translate }}" ng-model="vm.client.dateOfBirth">
+            </label>
+          </div>
+
+          <div class="col">
+            <label class="item item-input item-floating-label">
+              <span class="input-label">{{ 'CLIENT.REFERRED_BY' | translate }}</span>
+              <input type="text" placeholder="{{ 'CLIENT.REFERRED_BY' | translate }}" ng-model="vm.client.referredBy">
+            </label>
+          </div>
+
+          <div class="col">
+            <label class="item item-input item-floating-label">
+              <span class="input-label">{{ 'CLIENT.CASE_WORKER_CONDUCTING_ASSESSMENT' | translate }}</span>
+              <input type="text" placeholder="{{ 'CLIENT.CASE_WORKER_CONDUCTING_ASSESSMENT' | translate }}" ng-model="vm.client.caseWorkerName">
+            </label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <label class="item item-input item-floating-label">
+              <span class="input-label">{{ 'CLIENT.BIRTH_PROVINCE' | translate }}</span>
+              <input type="text" placeholder="{{ 'CLIENT.BIRTH_PROVINCE' | translate }}" ng-model="vm.client.birthProvince">
+            </label>
+          </div>
+        </div>
+
+        <button class="button button-positive button-small" ui-sref="root.clients.assessments.new({ clientId: vm.client.id })">
+          {{ 'CLIENT.BEGIN_ASSESSMENT' | translate }}
+        </button>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

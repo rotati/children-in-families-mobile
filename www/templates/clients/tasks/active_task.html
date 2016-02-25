@@ -1,0 +1,69 @@
+<ion-view view-title="{{ 'TASK.ACTIVE_TASK_LIST_TITLE' | translate}}">
+  <ion-nav-buttons side="left">
+    <button class="button back-button button-clear ink" ng-click="vm.goBack()">
+      <i class="icon ion-ios-arrow-back"></i>
+    </button>
+  </ion-nav-buttons>
+
+  <ion-content padding>
+    <div class="row">
+      <div class="col">
+        <h5>Chantra's {{ 'TASK.TASKS' | translate }}</h5>
+      </div>
+      <div class="col">
+        <h5>{{ 'TASK.HEADER_LABEL' | translate }}</h5>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <select ng-options="client.id as client.name for client in vm.clients | unique: 'id'" ng-model="vm.search.client.id" ng-change="vm.changeFilter();">
+          <option value="">{{ 'TASK.FILTER_CLIENT_OPTION' | translate }}</option>
+        </select>
+      </div>
+    </div>
+    <div class="card">
+      <ion-list class="border-overdue" padding>
+        <div class="item item-divider">
+          {{ 'GENERAL.OVERDUE_TASK' | translate }}:
+        </div>
+        <div  class="border" ng-repeat="c in vm.overduesCase | unique: 'id' | filter: vm.search">
+          <h5>{{ c.client.name }}</h5>
+          <ion-item ng-if="task.case.id == c.id " ng-repeat="task in vm.overduesTask" class="border">
+            <h2>{{ 'GENERAL.DOMAIN' | translate }}: {{ task.domain.identity }}</h2>
+            <p>{{ task.completionDate | date: 'dd/MM/yy'}}</p>
+            <p>{{ task.name }}</p>
+          </ion-item>
+        </div>
+      </ion-list>
+
+      <ion-list class="border-ondue">
+        <div class="item item-divider">
+          {{ 'GENERAL.ONDUE_TASK' | translate }}:
+        </div>
+        <div ng-repeat="c in vm.onDuesCase | unique: 'id' | filter: vm.search" class="border">
+          <h5>{{ c.client.name }}</h5>
+          <ion-item ng-if="task.case.id == c.id " ng-repeat="task in vm.onDuesTask" class="border">
+            <h2>{{ 'GENERAL.DOMAIN' | translate }}: {{ task.domain.identity }}</h2>
+            <p>{{ task.completionDate | date: 'dd/MM/yy' }}</p>
+            <p>{{ task.name }}</p>
+          </ion-item>
+        </div>
+      </ion-list>
+
+      <ion-list class="border-upcomming">
+        <div class="item item-divider">
+          {{ 'GENERAL.UPCOMMING_TASK' | translate }}:
+        </div>
+        <div ng-repeat="c in vm.upcomingDuesCase | unique: 'id'| filter: vm.search" class="border">
+          <h5>{{ c.client.name }}</h5>
+          <ion-item ng-if="task.case.id == c.id " ng-repeat="task in vm.upcomingDuesTask" class="border">
+            <h2>{{ 'GENERAL.DOMAIN' | translate }}: {{ task.domain.identity }}</h2>
+            <p>{{ task.completionDate | date: 'dd/MM/yy'}}</p>
+            <p>{{ task.name }}</p>
+          </ion-item>
+        </h2>
+      </ion-list>
+    </div>
+  </ion-content>
+</ion-view>

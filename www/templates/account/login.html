@@ -1,0 +1,26 @@
+<ion-view view-title="{{ 'ACCOUNT.LOGIN' | translate }}">
+  <ion-content class="padding">
+    <div class="hero flat">
+      <div class="content">
+        <div class="app-icon"></div>
+      </div>
+    </div>
+
+    <form ng-submit="vm.login()" name="user">
+      <div class="list list-inset">
+        <label class="item item-input">
+          <i class="ion-email login-icon"></i>
+          <input class="login-form" type="email" ng-model="vm.user.email" placeholder="{{ 'ACCOUNT.EMAIL' | translate }}">
+        </label>
+      </div>
+
+      <div class="list list-inset">
+        <label class="item item-input">
+          <i class="ion-locked login-icon"></i>
+          <input class="login-form" type="password" ng-model="vm.user.password" placeholder="{{ 'ACCOUNT.PASSWORD' | translate }}">
+        </label>
+      </div>
+      <button class="button button-full button-positive ink" type="submit">{{ 'ACCOUNT.LOGIN' | translate }}</button>
+    </form>
+  </ion-content>
+</ion-view>

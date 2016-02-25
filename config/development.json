@@ -1,0 +1,6 @@
+{
+  "localDB": "cifDevelopment",
+  "remoteDB": "cifStaging",
+  "changeLogDB": "cifChangeLog",
+  "host": "http://localhost:3000/api/v1"
+}

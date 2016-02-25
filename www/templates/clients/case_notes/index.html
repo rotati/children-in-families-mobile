@@ -1,0 +1,91 @@
+<ion-view view-title="{{ 'CASE_NOTE.INDEX_TITLE' | translate }} ({{vm.options.page}} of {{ vm.total }})">
+  <ion-nav-buttons side="left">
+    <button class="button back-button button-clear ink" ng-click="vm.goBack()">
+      <i class="icon ion-ios-arrow-back"></i>
+    </button>
+  </ion-nav-buttons>
+
+  <ion-content padding overflow-scroll="true">
+    <div class="row">
+      <div class="col">
+        <div class="card">
+          <div class="item item-divider">
+            {{ 'CASE_NOTE.MEETING_DETAIL' | translate }}
+          </div>
+          <div class="item item-text-wrap">
+            <div class="row">
+              <div class="col">{{ vm.client.name }}</div>
+              <div class="col">{{ 'CASE_NOTE.MEETING_WITH' | translate }} {{ vm.currentUser.email }}</div>
+              <div class="col">{{ 'GENERAL.ON' | translate }} {{ vm.caseNote.meetingDate | date :'dd/MMM/yyyy' }}</div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <b>{{ 'GENERAL.PRESENT' | translate }}</b> {{ vm.caseNote.attendee }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <div class="card" ng-repeat="domainGroup in vm.domainGroups">
+          <div class="row">
+            <div class="col col-25">
+              <div  class="border">
+                <ion-item class="item-text-wrap">
+                  <p>{{ 'GENERAL.DOMAIN' | translate }} {{ domainGroup.name }}</p>
+                  {{ domainGroup.description }}
+                </ion-item>
+              </div>
+
+              <div class="box-group padding">
+                <div ng-if="domain.domainGroup.id == domainGroup.id" ng-repeat="domain in vm.domains">
+                  <div ng-if="assessmentDomain.Domain_assessments == domain.id" ng-repeat="assessmentDomain in vm.assessmentDomains">
+                    <div assessment-score="{{assessmentDomain.score}}">{{assessmentDomain.score}}</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col col-70">
+              <div class="border" ng-if="caseNote.domainGroup.id == domainGroup.id" ng-repeat="caseNote in vm.caseNoteDomainGroups">
+                <ion-item class="item-text-wrap">
+                  <h3>{{ 'GENERAL.NOTES' | translate }}:</h3>
+                  <p>
+                    {{ caseNote.note }}
+                  </p>
+                </ion-item>
+              </div>
+              <div class="border" ng-if="vm.showOngoingTask(domainGroup.id)">
+                <ion-item>
+                  <h2>{{ 'CASE_NOTE.COMPLETED_TASK' | translate }}</h2>
+                </ion-item>
+                <div ng-if="task.domain.domainGroup.id == domainGroup.id" ng-repeat="task in vm.tasks">
+                  <ion-item class="item-text-wrap">
+                    <p>
+                      {{ task.name }}
+                    </p>
+                  </ion-item>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col col-75">
+            <button class="button button-small button-positive button-fab icon ion-chevron-left ink" ng-click="vm.previousCaseNote()"></button>
+
+            <button class="button button-small button-positive button-fab icon ion-chevron-right ink" ng-click="vm.nextCaseNote()"></button>
+          </div>
+
+          <div class="col">
+            <button class="button button-fab button-positive ink" ui-sref="root.clients.caseNotes.new({ clientId: vm.client.id })"><i class="icon ion-plus-round"></i></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

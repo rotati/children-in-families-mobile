@@ -1,0 +1,57 @@
+<ion-view view-title="{{ 'TASK.INDEX_TITLE' | translate }}" hide-back-button="true">
+  <ion-nav-buttons side="left">
+    <button class="button back-button button-clear ink" ng-click="vm.goBack()">
+      <i class="icon ion-ios-arrow-back"></i>
+    </button>
+  </ion-nav-buttons>
+
+  <ion-content padding>
+    <div class="card">
+      <ion-list>
+        <ion-item>
+          <h2>{{ 'GENERAL.NAME' | translate }}: {{ vm.client.name }}</h2>
+        </ion-item>
+      </ion-list>
+
+      <ion-list class="border-overdue" padding>
+        <div class="item item-divider">
+          {{ 'GENERAL.OVERDUE_TASK' | translate }}:
+        </div>
+        <ion-item ng-repeat="task in vm.overdueTasks" class="border">
+          <h2>{{ 'GENERAL.DOMAIN' | translate }}: {{ task.domain.identity }}</h2>
+          <p>{{ task.completionDate | date: 'dd/MM/yy'}}</p>
+          <p>{{ task.name }}</p>
+        </ion-item>
+      </ion-list>
+
+      <ion-list class="border-ondue">
+        <div class="item item-divider">
+          {{ 'GENERAL.ONDUE_TASK' | translate }}:
+        </div>
+        <ion-item ng-repeat="task in vm.onDues" class="border">
+          <h2>{{ 'GENERAL.DOMAIN' | translate }}: {{ task.domain.identity }}</h2>
+          <p>{{ task.completionDate | date: 'dd/MM/yy' }}</p>
+          <p>{{ task.name }}</p>
+        </ion-item>
+      </ion-list>
+
+      <ion-list class="border-upcomming">
+        <div class="item item-divider">
+          {{ 'GENERAL.UPCOMMING_TASK' | translate }}:
+        </div>
+        <ion-item ng-repeat="task in vm.upcomingDues" class="border">
+          <h2>{{ 'GENERAL.DOMAIN' | translate }}: {{ task.domain.identity }}</h2>
+          <p>{{ task.completionDate | date: 'dd/MM/yy'}}</p>
+          <p>{{ task.name }}</p>
+        </ion-item>
+      </ion-list>
+
+      <div class="row">
+        <div class="col">
+          <button class="button button-small button-positive" ui-sref="root.clients.tasks.new">{{
+          'TASK.ADD_TASK' | translate }}</button>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

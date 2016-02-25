@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="lib/ion-md-input/css/ion-md-input.min.css">
+    <link href="lib/ionic-material/dist/ionic.material.min.css" rel="stylesheet">
+    <link href="css/ionic.app.css" rel="stylesheet">
+
+
+    <!-- Lib -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+    <script src="lib/ionic-material/dist/ionic.material.min.js"></script>
+    <script src="lib/ion-md-input/js/ion-md-input.min.js"></script>
+
+    <script src="lib/persistence/lib/persistence.js"></script>
+    <script src="lib/persistence/lib/persistence.store.cordovasql.js"></script>
+    <script src="lib/persistence/lib/persistence.store.sql.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Faker/3.0.1/faker.min.js"></script>
+    <script src="lib/angular-filter/dist/angular-filter.min.js"></script>
+
+    <script src="lib/angular-cookie/angular-cookie.js"></script>
+    <script src="lib/ng-token-auth/dist/ng-token-auth.js"></script>
+    <script src="lib/angular-translate/angular-translate.min.js"></script>
+    <script src="lib/angular-translate-loader-static-files/angular-translate-loader-static-files.min.js"></script>
+    <script src="lib/angular-cookies/angular-cookies.min.js"></script>
+    <script src="lib/angular-translate-storage-cookie/angular-translate-storage-cookie.min.js"></script>
+    <script src="lib/angular-translate-storage-local/angular-translate-storage-local.min.js"></script>
+    <!-- End Lib -->
+
+    <script src="cordova.js"></script>
+    <script src="lib/ngCordova/dist/ng-cordova.min.js"></script>
+    <script src="js/constants/constants.js"></script>
+
+    <script src="js/app.js"></script>
+    <script src="js/router.js"></script>
+
+    <script src="js/config.js"></script>
+
+    <script src="js/directives/assessment.score.js"></script>
+    <script src="js/directives/assessment.score.border.js"></script>
+    <script src="js/directives/set_background_color.js"></script>
+
+    <!-- Service -->
+    <script src="js/services/user.js"></script>
+    <script src="js/services/client.js"></script>
+    <script src="js/services/case_note.js"></script>
+    <script src="js/services/case.js"></script>
+    <script src="js/services/assessment.js"></script>
+    <script src="js/services/assessment_domain.js"></script>
+    <script src="js/services/domain.js"></script>
+    <script src="js/services/domain_group.js"></script>
+    <script src="js/services/task.js"></script>
+    <script src="js/services/case_note_domain_group.js"></script>
+    <script src="js/services/setup.js"></script>
+    <script src="js/services/assessment_change_log.js"></script>
+    <script src="js/services/assessment_domain_change_log.js"></script>
+    <script src="js/services/case_note_change_log.js"></script>
+    <script src="js/services/case_note_domain_group_change_log.js"></script>
+    <script src="js/services/task_change_log.js"></script>
+    <!-- End Service -->
+
+    <!-- Controller -->
+    <script src="js/controllers/root.js"></script>
+    <script src="js/controllers/accounts/login.js"></script>
+    <script src="js/controllers/clients/index.js"></script>
+    <script src="js/controllers/clients/show.js"></script>
+    <script src="js/controllers/clients/confirm.js"></script>
+    <script src="js/controllers/clients/case_notes/index.js"></script>
+    <script src="js/controllers/clients/case_notes/new.js"></script>
+    <script src="js/controllers/clients/assessments/index.js"></script>
+    <script src="js/controllers/clients/assessments/show.js"></script>
+    <script src="js/controllers/clients/assessments/new.js"></script>
+    <script src="js/controllers/clients/assessments/tasks/new.js"></script>
+    <script src="js/controllers/clients/tasks/active_task.js"></script>
+    <script src="js/controllers/clients/tasks/index.js"></script>
+    <script src="js/controllers/clients/tasks/task.js"></script>
+    <script src="js/controllers/clients/tasks/new.js"></script>
+    <!-- End Controller -->
+  </head>
+
+  <body ng-app="cif">
+    <ion-nav-view></ion-nav-view>
+  </body>
+</html>

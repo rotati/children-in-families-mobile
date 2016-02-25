@@ -1,0 +1,113 @@
+<ion-view view-title="{{ 'CASE_NOTE.INDEX_TITLE' | translate }}" hide-back-button="true">
+  <ion-nav-buttons side="left">
+    <button class="button back-button button-clear" ng-click="vm.goBack()">
+      <i class="icon ion-ios-arrow-back"></i>
+    </button>
+  </ion-nav-buttons>
+
+  <ion-nav-buttons side="right">
+    <button class="button button-icon button-clear ion-home" ng-click="vm.goHome()" ></button>
+  </ion-nav-buttons>
+
+  <ion-content padding overflow-scroll=true>
+    <form ng-submit="vm.save()" >
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <div class="item item-divider">
+              {{ 'CASE_NOTE.MEETING_DETAIL' | translate }}
+            </div>
+            <div class="row">
+              <div class="col">
+                <label class="item">
+                  <b>{{ vm.client.name }}</b>
+                </label>
+              </div>
+              <div class="col">
+                <label class="item">
+                {{ 'CASE_NOTE.MEETING_WITH' | translate }} <b> {{ vm.currentUser.email }}</b>
+                </label>
+              </div>
+              <div class="col">
+                <label class="item item-input">
+                  <span>{{ 'GENERAL.ON' | translate }} </span>
+                  <input type="date" ng-model="vm.caseNote.meetingDate">
+                </label>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                <label class="item item-input">
+                  <span>{{ 'GENERAL.PRESENT' | translate }}</span>
+                  <input class="login-form" type="text" ng-model="vm.caseNote.attendee" placeholder="{{ 'GENERAL.PRESENT' | translate }}" required>
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <div class="card" ng-repeat="(index, domainGroup) in vm.domainGroups">
+            <div class="row">
+              <div class="col col-25">
+                <div class="border">
+                  <ion-item class="item-text-wrap">
+                    <p>{{ 'DOMAIN.NAME' | translate }} {{ domainGroup.name }}</p>
+                    {{ domainGroup.description }}
+                  </ion-item>
+                </div>
+                <div class="box-group padding">
+                  <div ng-if="domain.domainGroup.id == domainGroup.id" ng-repeat="domain in vm.domains">
+                    <div ng-if="assessmentDomain.Domain_assessments == domain.id" ng-repeat="assessmentDomain in vm.assessmentDomains">
+                      <div assessment-score="{{assessmentDomain.score}}">{{assessmentDomain.score}}</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col col-75">
+                <div class="border" ng-if="caseNote.domainGroup == domainGroup.id" ng-repeat="caseNote in vm.caseNote.noteDomainGroups">
+                  <label class="item item-input text">
+                    <textarea placeholder="Notes" rows="5" ng-model="caseNote.note"></textarea>
+                  </label>
+                </div>
+
+                <div class="border" ng-show="vm.showOngoingTask(domainGroup.id)">
+                  <div class="row">
+                    <div class="col">
+                      {{ 'CASE_NOTE.TASK' | translate }}
+                    </div>
+                    <div class="col col-20">
+                      {{ 'CASE_NOTE.COMPLETE' | translate }}
+                    </div>
+                  </div>
+                  <div ng-if="task.domain.domainGroup.id == domainGroup.id" ng-repeat="task in vm.incompleteTasks">
+                    <div class="row">
+                      <div class="col">
+                        {{ task.name }}
+                      </div>
+                      <div class="col col-20">
+                        <ion-checkbox ng-model="task.completed">{{ 'GENERAL.YES' | translate }}</ion-checkbox>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <button class="button button-small button-positive ink"  type="submit">
+                <i class="ion-android-document"></i>
+                {{ 'GENERAL.SAVE' | translate }}
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </ion-content>
+</ion-view>

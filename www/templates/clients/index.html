@@ -1,0 +1,53 @@
+<ion-view view-title="{{ 'CLIENT.INDEX_TITLE' | translate }} {{vm.title}}">
+  <ion-content padding overflow-scroll="true">
+    <ion-refresher pulling-text="Pull to refresh" on-refresh="vm.refresh()">
+    </ion-refresher>
+
+    <ion-item class="client-name-km">
+      <h2>{{ 'GENERAL.WELCOME' | translate }} Chantra</h2>
+      <p>{{ 'CLIENT.UPCOMING_APPOINTMENT_LABEL' | translate }}</p>
+    </ion-item>
+
+    <label class="item item-input">
+      <i class="icon ion-search placeholder-icon"></i>
+      <input type="text" placeholder="{{ 'CLIENT.SEARCH_LABEL' | translate }}" ng-model="vm.search.name">
+    </label>
+
+    <div class="row">
+      <div class="col">
+        <button class="button button-positive button-small" ui-sref="root.clients.active_tasks({ id: vm.clientId})">{{ 'CLIENT.ALL_TASK' | translate }}</button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <h5>{{ 'CLIENT.NAME' | translate }}</h5>
+      </div>
+      <div class="col">
+        <h5>{{ 'CLIENT.APPOINTMENT_DUE_DATE' | translate }}</h5>
+      </div>
+      <div class="col">
+        <h5>{{ 'CLIENT.VIEW_PREVIOUS_CASE_NOTES' | translate }}</h5>
+      </div>
+    </div>
+
+    <div class="row animate-fade-slide-in-right" collection-repeat="client in vm.clients | filter:vm.search" >
+      <div class="col">
+        <button class="button button-clear button-positive no-padding" ui-sref="root.clients.show({id: client.id})">
+          {{ client.name }}
+        </button>
+      </div>
+
+      <div class="col">
+        <button class="button button-clear button-stable no-padding">
+          {{ vm.currentDate }}
+        </button>
+      </div>
+
+      <div class="col">
+        <button class="button button-small button-positive" ui-sref="root.clients.caseNotes({clientId: client.id})">
+          {{ 'CLIENT.VIEW_NOTES' | translate }}
+        </button>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

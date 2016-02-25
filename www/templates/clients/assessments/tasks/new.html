@@ -1,0 +1,54 @@
+<ion-view view-title="{{ 'TASK.TASK_AUTO_TRIGGER_TITLE' | translate }}">
+  <ion-content class="padding">
+    <div class="row">
+      <div class="col">
+        <p>{{ 'TASK.DESCRIPTION_LABEL' | translate }}</p>
+        <br>
+        <p>{{ 'TASK.DESCRIPTION_LABEL_1' | translate }}</p>
+      </div>
+    </div>
+
+    <div class="card padding">
+      <div class="row">
+        <div class="col col-30">
+          <p>{{ 'GENERAL.DOMAIN' | translate }}</p>
+        </div>
+
+        <div class="col col-20">
+          <p>{{ 'GENERAL.SCORE' | translate }}</p>
+        </div>
+
+        <div class="col col-50">
+          <p>{{ 'GENERAL.TASK' | translate }}</p>
+        </div>
+      </div>
+      <form ng-submit="vm.saveAssessmentTask()">
+        <div class="row" set-background-color="{{assessmentDomain.score}}" ng-repeat="assessmentDomain in vm.assessmentDomains">
+          <div class="col col-30">
+            <div ng-if="assessmentDomain.Domain_assessments == domain.id" ng-repeat="domain in vm.domains">
+              <p>{{ 'GENERAL.DOMAIN' | translate }} {{ domain.identity }}:<br>
+                {{ domain.name }}
+              </p>
+            </div>
+          </div>
+
+          <div class="col col-20">
+            <div assessment-score="{{ assessmentDomain.score  }}">{{ assessmentDomain.score }}</div>
+          </div>
+
+          <div class="col col-50" ng-init="assessmentDomain.taskLists=[{name: ''}]">
+            <div ng-repeat="task in assessmentDomain.taskLists">
+              <label class="item item-input">
+                <span class="input-label">{{ 'GENERAL.TASK' | translate }} {{ $index + 1 }}</span>
+                <input type="text" ng-model="task.name" required>
+              </label>
+            </div>
+            <button class="button button-small button-positive" ng-click="vm.addTask(assessmentDomain.taskLists)">{{ 'TASK.ADD_TASK' | translate }}</button>
+          </div>
+        </div>
+
+        <button class="button button-stable button-small ink" type="submit">{{ 'GENERAL.DONE' | translate }}</button>
+      </form>
+    </div>
+  </ion-content>
+</ion-view>

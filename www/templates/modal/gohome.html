@@ -1,0 +1,15 @@
+<ion-modal-view class="confirm-panel">
+  <ion-header-bar class="bar bar-header bar-default">
+    <h1 class="title">{{ 'MODAL.ARE_YOU_SURE' | translate }}</h1>
+  </ion-header-bar>
+
+  <ion-content class="padding">
+    <div class="list">
+      <ion-item class="item-text-wrap">
+        <p>{{ 'MODAL.GO_HOME_MESSAGE' | translate }}</p>
+      </ion-item>
+      <button class="button button-full button-default" ng-click="vm.closeModal()">{{ 'MODAL.CANCEL_OPTION' | translate }}</button>
+      <button class="button button-full button-default" ui-sref="root.clients">{{ 'MODAL.OK_OPTION' | translate }}</button>
+    </div>
+  </ion-content>
+</ion-modal-view>

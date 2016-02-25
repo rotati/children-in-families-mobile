@@ -1,0 +1,162 @@
+<ion-view view-title="{{ 'CLIENT.SHOW_TITLE' | translate }}">
+  <ion-nav-buttons side="left">
+    <button class="button back-button button-clear ink" ng-click="vm.goBack()">
+      <i class="icon ion-ios-arrow-back"></i>
+    </button>
+  </ion-nav-buttons>
+
+  <ion-content class="client-detail">
+    <div class="row">
+      <div class="col col-33">
+        <h5>{{ 'GENERAL.NAME' | translate }}: {{ vm.client.name }}</h5>
+
+        <p>{{ 'CLIENT.CCW' | translate }}: {{ vm.client.caseWorkerName }}</p>
+        <p>{{ 'CLIENT.DOB' | translate }}: {{ vm.client.dateOfBirth | date: 'dd/mm/yy' }}</p>
+        <p>{{ 'CLIENT.BIRTH_PROVINCE' | translate }}: {{ vm.client.birthProvince }}</p>
+        <p>{{ 'CLIENT.STATUS' | translate }}: {{ vm.client.status | uppercase }}</p>
+      </div>
+
+      <div class="col col-67">
+        <div class="card">
+          <div class="item item-divider">
+            {{ 'CLIENT.IMPORTANT_DATE' | translate }}
+          </div>
+          <div class="item item-text-wrap">
+            <h2>{{ 'CLIENT.ASSESSMENT_DATE' | translate }}</h2>
+            <div class="row">
+              <div class="col">
+                {{ 'CLIENT.MOST_RECENT_ASSESSMENT_DATE' | translate }}
+              </div>
+
+              <div class="col">
+                {{ vm.assessmentDueDate.mostRecent | date: 'dd/MM/yyyy' }}
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                {{ 'CLIENT.NEXT_ASSESSMENT_DUE_DATE' | translate }}
+              </div>
+
+              <div class="col">
+                {{ vm.assessmentDueDate.nextAssessment | date: 'dd/MM/yyyy' }}
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                {{ 'CLIENT.TIME_UNIT_NEXT_ASSESSMENT' | translate }}
+              </div>
+
+              <div class="col">
+                {{ vm.assessmentDueDate.timeUnit }}
+              </div>
+            </div>
+          </div>
+
+          <div class="item item-text-wrap">
+            <h2>{{ 'CLIENT.CASE_MANAGEMENT_MEETING_DATE' | translate }}</h2>
+            <div class="row">
+              <div class="col">
+                {{ 'CLIENT.MOST_RECENT_CM_MEETING' | translate }}
+              </div>
+
+              <div class="col">
+                03/12/2015
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                {{ 'CLIENT.NEXT_CM_MEETING_DUE_DATE' | translate }}
+              </div>
+
+              <div class="col">
+                03/12/2015
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col">
+                {{ 'CLIENT.TIME_UNIT_NEXT_CM_MEETING' | translate }}
+              </div>
+
+              <div class="col">
+                1 Day past
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col">
+        <div class="row">
+          <div class="col"><h5>{{ 'CLIENT.CURRENT_DOMAIN_SCORE' | translate }}</h5></div>
+          <div class="col">
+            <button class="button button-position button-small" ui-sref="root.clients.assessments({ clientId: vm.client.id })">{{ 'CLIENT.VIEW_HISTORY' | translate }}</button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col"> 1 </div>
+          <div class="col"> 2 </div>
+          <div class="col"> 3 </div>
+          <div class="col"> 4 </div>
+          <div class="col"> 5 </div>
+          <div class="col"> 6 </div>
+        </div>
+
+        <div class="row">
+          <div ng-repeat="assessmentDomain in vm.assessmentDomains" >
+            <div class="col" ng-if="domain.id == assessmentDomain.Domain_assessments" ng-repeat="domain in vm.domains | filter: {identity: 'A'}">
+              <div assessment-score="{{assessmentDomain.score}}">{{assessmentDomain.score}}</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div ng-repeat="assessmentDomain in vm.assessmentDomains" >
+            <div class="col" ng-if="domain.id == assessmentDomain.Domain_assessments" ng-repeat="domain in vm.domains | filter: {identity: 'B'}">
+              <div assessment-score="{{assessmentDomain.score}}">{{assessmentDomain.score}}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card">
+          <div class="row">
+            <div class="col">
+              {{ 'CLIENT.VIEW_CASE_NOTES' | translate }}
+            </div>
+
+            <div class="col">
+              <button class="button button-positive button-small ink" ui-sref="root.clients.caseNotes({ clientId: vm.client.id })">{{ 'GENERAL.GO' | translate }}</button>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              {{ 'CLIENT.VIEW_ASSESSMENTS' | translate }}
+            </div>
+
+            <div class="col">
+              <button class="button button-positive button-small ink" ui-sref="root.clients.assessments({ clientId: vm.client.id })">{{ 'GENERAL.GO' | translate }}</button>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              {{ 'CLIENT.VIEW_TASKS' | translate }}
+            </div>
+
+            <div class="col">
+              <button class="button button-positive button-small ink" ui-sref="root.clients.tasks({ clientId: vm.client.id })">{{ 'GENERAL.GO' | translate }}</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

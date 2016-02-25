@@ -1,0 +1,13 @@
+{
+  "name": "HelloIonic",
+  "private": "true",
+  "devDependencies": {
+    "ionic": "driftyco/ionic-bower#1.2.4"
+  },
+  "dependencies": {
+    "angular": "~1.4.6",
+    "ng-token-auth": "^0.0.28",
+    "angular-translate": "^2.9.0",
+    "angular-translate-loader-static-files": "^2.9.0"
+  }
+}

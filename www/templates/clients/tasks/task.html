@@ -1,0 +1,15 @@
+<div ng-if="noteTask.domainGroupId == domainGroup.name" ng-repeat="noteTask in caseNoteTasks">
+  <div class="card">
+    <ion-list>
+      <ion-item ng-repeat="task in noteTask.tasks" class="item-icon-right item-input text">
+        <input type="text" ng-model="task.name" placeholder="New task">
+        <i class="icon ion-minus-circled assertive" ng-click="vm.removeTask(noteTask, $index)"></i>
+      </ion-item>
+    </ion-list>
+  </div>
+  <div class="row">
+    <div class="col">
+      <a ng-click="vm.addMoreTask(noteTask)">Add Task</a>
+    </div>
+  </div>
+</div>

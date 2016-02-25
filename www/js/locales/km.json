@@ -1,0 +1,145 @@
+{
+  "MENU":  {
+    "HOME": "ទំព័រដើម",
+    "SETTING": "ការកំណត់"
+  },
+
+  "LANGUAGE": {
+    "KHMER": "ភាសាខ្មែរ",
+    "ENGLISH": "ភាសាអង់គ្លេស"
+  },
+
+  "GENERAL": {
+    "LANGUAGE": "ភាសា",
+    "SETTING_TITLE": "ការកំណត់",
+    "WELCOME": "សូមស្វាគមន៍",
+    "DONE": "Done",
+    "NEXT": "Next",
+    "SAVE": "Save",
+    "PRESENT": "Present",
+    "ON": "On",
+    "NOTES": "Notes",
+    "YES": "Yes",
+    "DOMAIN": "Domain",
+    "TASK": "Task",
+    "SCORE": "Score",
+    "NAME": "Name",
+    "GO": "Go",
+    "UPCOMMING_TASK": "Upcomming Tasks",
+    "ONDUE_TASK": "Ondue Tasks",
+    "OVERDUE_TASK": "Overdue Tasks"
+  },
+
+  "CLIENT": {
+    "INDEX_TITLE": "Client Appointment for",
+    "SHOW_TITLE": "Show Client",
+    "CONFIRMATION_TITLE": "Client Confirmation",
+    "NAME": "ឈ្មោះឣតិថិជន",
+    "ALL_TASK": "View All Active Tasks",
+    "APPOINTMENT_DUE_DATE": "Appointment Due Date",
+    "VIEW_PREVIOUS_CASE_NOTES": "View Previous Case Notes",
+    "UPCOMING_APPOINTMENT_LABEL": "Here are your upcoming appointments",
+    "VIEW_NOTES": "View Notes",
+    "SEARCH_LABEL": "ស្វែងរកឣតិថិជន",
+    "ASSESSMENT_DESCRIPTION": "You are about to begin a 6-Monthly Review Assessment for Charles. This assessment will look at Charles’ life situation and assess him against the 12 Domains for Child Wellness in the Child Status Index.",
+    "ASSESSMENT_DESCRIPTION_1": "Please consider each assessment domain carefully and, once you have entered the score that you believe is appropriate for Charles’ situation, enter some notes on your reasons for selecting this score in the box bellow the numbers. Please note that Charles’ situation may have improved, stayed the same, or even become worse since his last assessment. Please enter your best assessment of Charles’ situation. An inaccurate score will make it harder to support Charles in the best way possible.",
+    "ASSESSMENT_BEGIN_INSTRUCTION": "To begin, please confirm the information bellow is correct, then press ‘Begin’.",
+    "REFERRAL_DATE": "Referral Date 1",
+    "TODAY_DATE": "Today's Date",
+    "DATE_OF_BIRTH": "ថ្ងៃ ខែ ឆ្នាំ កំណើត",
+    "REFERRED_BY": "Referred By",
+    "BIRTH_PROVINCE": "Birth Provice",
+    "CASE_WORKER_CONDUCTING_ASSESSMENT": "Worker Conducting Assessment",
+    "BEGIN_ASSESSMENT": "Begin Assessment",
+    "CCW": "CCW",
+    "DOB": "ថ្ងៃ ខែ ឆ្នាំ កំណើត",
+    "STATUS": "Status",
+    "IMPORTANT_DATE": "Important Dates",
+    "ASSESSMENT_DATE": "Assessment Dates",
+    "VIEW_TASKS": "View Ongoing Tasks",
+    "VIEW_ASSESSMENTS": "View Assessments",
+    "VIEW_CASE_NOTES": "View Case Notes",
+    "VIEW_HISTORY": "View History",
+    "CURRENT_DOMAIN_SCORE": "Current Domain Scores",
+    "MOST_RECENT_ASSESSMENT_DATE": "Most Recent Assessment Date",
+    "NEXT_ASSESSMENT_DUE_DATE": "Next Assessment Due Date",
+    "TIME_UNIT_NEXT_ASSESSMENT": "Time Unit Next Assessment",
+    "MOST_RECENT_CM_MEETING": "Most Recent CM Meeting",
+    "NEXT_CM_MEETING_DUE_DATE": "Next CM Meeting Due Date",
+    "TIME_UNIT_NEXT_CM_MEETING": "Time Unit Next CM Meeting",
+    "CASE_MANAGEMENT_MEETING_DATE": "Case Management Metting Dates"
+  },
+
+  "ASSESSMENT": {
+    "INDEX_TITLE": "Assessment",
+    "NEW_TITLE": "New Assessment",
+    "SHOW_TITLE": "Show Assessment",
+    "INITIAL_ASSESSMENG": "Initial Assessment",
+    "MONTHLY_REVIEW": "6 Monthly Review",
+    "VIEW_REPORT": "View Report",
+    "BEGIN_NOW": "Begin Now ...",
+    "NEXT_MONTHLY_REVIEW": "Next 6 Monthly Review",
+    "INITIAL_ASSESSMENG_REPORT": "Initial Assessment Report",
+    "MONTHLY_ASSESSMENG_REPORT": "6 Monthly Assessment Report",
+    "COMPLETED_BY": "Assessment completed by",
+    "REASON_LABEL": "What have you heard and/or observed that lead you to give this score?",
+    "HISTORY": "Assessment History",
+    "VERY_POOR": "Very Poor",
+    "NOT_SO_GOOD": "Not So Good",
+    "QUITE_GOOD": "Quite Good",
+    "EXCELLENT_GOOD": "Excellent Good"
+  },
+
+  "DOMAIN": {
+    "NAME": "Domain",
+    "SCORE": "Domain Score"
+  },
+
+  "TASK": {
+    "TASK_AUTO_TRIGGER_TITLE":"Assessment Task Auto Trigger",
+    "INDEX_TITLE": "Active Tasks",
+    "NEW_TITLE": "New Task Creator",
+    "ACTIVE_TASK_LIST_TITLE": "Active Task List",
+    "NAME": "Task",
+    "LIST": "Task List",
+    "DESCRIPTION_LABEL": "During this assessment, you identified some Domains that were scored at Level 1(Very Poor) or Level 2 (Not So Good). Please assign at least one task to each Domain so that you, the child and the family can begin working to improve the child’s situation.",
+    "DESCRIPTION_LABEL_1": "At your next Case Management Meeting, the app will ask you about how you are progressing with tasks you set today, and whether the are complete yet or not.",
+    "ADD_TASK": "Add Task",
+    "COMPLETION_DATE": "Completion Date",
+    "TASK_DETAILS": "Enter task details",
+    "REGUARDING_DOMAIN": "Regarding Domain",
+    "NEW_TASK_REGUARDING": "New Task Reguarding",
+    "FILTER_CLIENT_OPTION": "Filter By Client",
+    "HEADER_LABEL":"Active Tasks",
+    "TASKS": "Tasks"
+  },
+
+  "CASE_NOTE": {
+    "INDEX_TITLE": "Last CaseNote",
+    "MEETING_DETAIL": "Meeting Details",
+    "MEETING_WITH": "meeting with",
+    "COMPLETED_TASK": "Completed Task",
+    "TASK": "Task",
+    "COMPLETE": "Complete ?"
+  },
+
+  "MODAL": {
+    "ARE_YOU_SURE": "Are you sure?",
+    "ASSESSMENT_MESSAGE": "This will cause what you were working on to be lost. Are you sure you want to go back to the Assessment Browser?",
+    "CANCEL_OPTION": "Oops, no! Take me back to what I was doing.",
+    "ASSESSMENT_OK_OPTION": "Yes, I’m sure. Take me Assessments",
+    "CASE_NOTE_MESSAGE": "This will cause what you were working on to be lost. Are you sure you want to go back to the Case Note Browser?",
+    "CASE_NOTE_OK_OPTION": "Yes, I’m sure. Take me Case Notes",
+    "TASK_MESSAGE": "This will cause what you were working on to be lost. Are you sure you want to go back to the Task Browser?",
+    "TASK_OK_OPTION": "Yes, I’m sure. Take me Tasks",
+    "GO_HOME_MESSAGE": "This will cause what you were working on to be lost. Are you sure you want to go Home.",
+    "OK_OPTION": "Yes, I’m sure. Take me Home"
+  },
+
+  "ACCOUNT": {
+    "EMAIL": "ឣ៊ីម៉ែល",
+    "PASSWORD": "លេខកូដសំងាត់",
+    "LOGIN": "ចូល",
+    "LOGOUT": "ចេញ"
+  }
+}

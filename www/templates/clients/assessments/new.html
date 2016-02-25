@@ -1,0 +1,62 @@
+<ion-view view-title="{{ 'ASSESSMENT.NEW_TITLE' | translate }}">
+  <ion-nav-buttons side="left">
+    <button class="button back-button button-clear ink" ng-click="vm.goBack()">
+      <i class="icon ion-ios-arrow-back"></i>
+    </button>
+  </ion-nav-buttons>
+
+  <ion-nav-buttons side="right">
+    <button class="button button-icon button-clear ion-home" ng-click="vm.goHome()" ></button>
+  </ion-nav-buttons>
+
+  <ion-content padding overflow-scroll="true" has-bouncing="true">
+    <div class="row">
+      <div class="col">
+        <h5 class="padding">{{ vm.client.name }}</h5>
+
+        <div class="card">
+          <ion-item class="item-text-wrap">
+            <h2>{{ 'GENERAL.DOMAIN' | translate }} {{ vm.newAssessment.domainIdentity}} - {{ vm.newAssessment.domainName }}</h2>
+            <p>{{ vm.newAssessment.domainDescription }}</p>
+
+            <form name="assessmentform">
+              <div class="row">
+                <div class="col">
+                  <ion-radio ng-model="vm.newAssessment.score" ng-value="'1'">{{ 'ASSESSMENT.VERY_POOR' | translate }}</ion-radio>
+                </div>
+
+                <div class="col">
+                  <ion-radio ng-model="vm.newAssessment.score" ng-value="'2'">{{ 'ASSESSMENT.NOT_SO_GOOD' | translate }}</ion-radio>
+                </div>
+
+                <div class="col">
+                  <ion-radio ng-model="vm.newAssessment.score" ng-value="'3'">{{ 'ASSESSMENT.QUITE_GOOD' | translate }}</ion-radio>
+                </div>
+
+                <div class="col">
+                  <ion-radio ng-model="vm.newAssessment.score" ng-value="'4'">{{ 'ASSESSMENT.EXCELLENT_GOOD' | translate }}</ion-radio>
+                </div>
+              </div>
+
+              <p>{{ 'ASSESSMENT.REASON_LABEL' | translate }}</p>
+              <label class="item item-input text">
+                <textarea placeholder="Notes" rows="5" style="height: 150px;" ng-model="vm.newAssessment.reason" ng-required="true"></textarea>
+              </label>
+              <div class="row">
+                <div class="col">
+                  <button class="button button-fab button-fab-bottom-right button-positive ink"  nav-view="active" ng-click="assessmentform.$valid && vm.done()" ng-hide="vm.newAssessment.lastDomain">
+                    {{ 'GENERAL.NEXT' | translate }}
+                  </button>
+
+                  <button class="button button-fab button-fab-bottom-right button-positive ink"  nav-view="active" ng-click="assessmentform.$valid && vm.finish()" ng-show="vm.newAssessment.lastDomain">
+                    {{ 'GENERAL.DONE' | translate }}
+                  </button>
+                </div>
+              </div>
+            </form>
+          </ion-item>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>
