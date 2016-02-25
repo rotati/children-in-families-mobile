@@ -4,6 +4,11 @@ The Children in Families case worker mobile application can be used by in the fi
 
 NOTE: This Mobile Application needs to be used in conjuction with the [Children in Families Web Application](https://github.com/rotati/children-in-families-web)
 
+### Client Device Supported Versions
+
+From [Android Lollipop](https://www.android.com/history/#/lollipop) V 5.0 to the latest version of Android
+Its also possible to run the application in [latest Chrome Browser](https://www.google.com/chrome/browser/desktop/) for testing
+
 ### Installation Requirements
 
 To install this project on your local development environment you will need:
